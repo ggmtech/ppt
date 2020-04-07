@@ -1,0 +1,601 @@
+---
+title: "The Diesel Loco Performance"
+author: "Gopal Kumar$^1$"
+date: '`r Sys.Date()`'
+output:
+  revealjs::revealjs_presentation:
+    reveal_options:
+      chalkboard:
+        theme: chalkboard
+        toggleNotesButton: yes
+      menu:
+        numbers: yes
+    self_contained: no
+    self-included: true
+  slidy_presentation:
+    highlight: tango
+    incremental: yes
+  beamer_presentation:
+    colortheme: dolphin
+    fonttheme: structurebold
+    highlight: tango
+    incremental: yes
+    keep_tex: yes
+    theme: AnnArbor
+    toc: yes
+  ioslides_presentation:
+    highlight: tango
+    incremental: yes
+institute: $^1$CMPE(Diesel)
+header-includes:
+- \usepackage{xcolor}
+- \usepackage{framed}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+<!---
+\setbeamercolor{block title}{use=structure,fg=black,bg=purple!55!black}
+\setbeamercolor{block body}{use=structure,fg=white,bg=blue!20!white}
+--->
+
+# The meeting agenda
+
+## Howe to get auto TOC
+
+# The options for chunks
+
+## some options
+
+default, simple, sky, beige, serif, solarized, blood, moon, night, black, league, and white. And for the syntax highlighting style: default, tango, pygments, kate, monochrome, espresso, zenburn, and haddock. Pass null to prevent syntax highlighting. The way to specify it is the same than the previous presentation types.
+
+## in other pakage
+
+cache: cache results for future knits (default = FALSE)
+
+cache.path: directory to save cached results in (default = “cache/”)
+
+child: file(s) to knit and then include (default = NULL)
+
+collapse: collapse all output into single block (default = FALSE)
+
+comment: prefix for each line of results (default = ‘##’)
+
+dependson: chunk dependencies for caching (default = NULL)
+
+echo: Display code in output document (default = TRUE)
+
+engine: code language used in chunk (default = ‘R’)
+
+error: Display error messages in doc (TRUE) or stop render when errors occur (FALSE) (default = FALSE)
+
+eval: Run code in chunk (default = TRUE)
+
+message: display code messages in document (default = TRUE)
+
+results=asis: passthrough results
+
+results=hide: do not display results
+
+results=hold: put all results below all code
+
+tidy: tidy code for display (default = FALSE)
+
+warning: display code warnings in document (default = TRUE)
+
+fig.align: ‘lef’, ‘right’, or ‘center’ (default = ‘default’)
+
+fig.cap: figure caption as character string (default = NULL)
+
+fig.height, fig.width: Dimensions of plots in inches
+
+highlight: highlight source code (default = TRUE)
+
+include: Include chunk in doc after running (default = TRUE)
+
+In the next link you can find more details about R chunks:  [](https://bookdown.org/yihui/rmarkdown/r-code.HTML)
+
+
+# Including tables
+
+Tables
+You have four options to add tables. First one, directly from R Markdown
+
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
+
+## or the next ones, from R code with the libraries knitr, xtable, or stargazer.
+
+data <- faithful[1:4, ]
+knitr::kable(data, caption = 'Table with kable')
+
+data <- faithful[1:4, ]
+print(xtable::xtable(data, caption = 'Table with xtable'), type = 'HTML', 
+      HTML.table.attributes = 'border=0')
+
+data <- faithful[1:4, ]
+stargazer::stargazer(data, type = 'HTML', title = 'Table with stargazer')
+
+# Interactive graphs
+
+## Interactive graphs
+In R there are a lot of packages to create interactive graphs. Highcharter is one of them, as well as the well-known HTMLwidgets. Here we have an example of a highcharter graph.
+
+## Now see graph
+
+```{r , echo=FALSE, message=FALSE, error=FALSE, warning=FALSE}
+library(highcharter)
+highchart() %>% 
+  hc_title(text = "Scatter chart with size and color") %>% 
+  hc_add_series(mtcars, "point", hcaes(wt, mpg, size=drat, color=hp)) %>%
+  widgetframe::frameWidget()
+```
+
+
+# Listed agenda points
+
+
+- Discussion on Compliance of last meeting Minutes
+- Detailed investigation & analysis of all diesel loco failures including corrective action plan  for Aug. & Sept 2017.
+- Safety issues including coupling problems, measures taken for improvement, material - availability of safety items etc.
+- Fuel saving, Steps taken to reduce fuel consumption , ABC classification of locos based on SFC & Rectification/corrective  action plan with PDCs.
+
+# but how to get auto page brake??
+- Preparedness of winter Drive.
+- Innovation & good work done in sheds during last Six months. 
+- Implementation of Action plan targets for 2017-18 including plan issued by Railway Board
+- Condemnation of locos, vetted proposals to HQ,  Progress of Disposal locos & excluded items. 
+- Quality issues of OFF POH/IOH locos & action plan for improvement.
+- Cleanliness drives & action taken for improving cleanliness  standards of Sheds & locos  
+
+
+# Performance Statistics 
+
+\colorlet{shadecolor}{red!30} 
+\begin{shaded}
+Black text with a red background.
+\end{shaded}
+
+\colorlet{shadecolor}{red!20} 
+
+## Direct PL /100ML/Month    Apr-Sept
+
+  : Direct PL /100ML/Month    Apr-Sept.
+
+| Shed | 2016 | 2017 | % improvement|
+|------|------:|------:|------:|
+| TKD  |12.6 | 7.2 | 42.9 |
+| LDH | 8.0 | 5.5 | 31.8 |
+| LKO | 17.9 | 12.3 | 31.3|
+| NR | 12.2 | 8.0 | 34.4 |
+| IR | 9.2 | 7.7 | 16.7|
+
+  
+## Loco under condemnation
+
+  : Loco under condemnation  
+  
+| Shed | Underage | Overage | Total |
+|---|---|----|------|
+| TKD  | 1  | 0   | 1 |
+| LDH  | 0  | 18   | 18 |
+| LKO  | 1  | 1   | 2 |
+| SSB  | 0  | 4   | 4    |
+| NR   | 2  | 23  | 25 |
+
+## SFC HSD/1000GTKM - Coaching
+
+  : SFC HSD/1000GTKM - Coaching
+
+| Shed | 2016 | 2017 | % improvement|
+|:---|---:|---:|----:|
+| TKD  | 3.43  | 3.42   | 0.30 |
+| LDH  | 3.43  | 3.43   |   |
+| LKO  | 3.42  | 3.43   |  |
+| NR   | 3.43  | 3.43  |  |
+  
+
+## SFC HSD/1000GTKM - Goods
+
+| Shed | 2016 | 2017 | % improvement|
+|---|---|---|------|
+| TKD  | 1.83  | 1.83   |  |
+| LDH  | 1.84   | 1.84   |   |
+| LKO  | 1.83  | 1.82   |  |
+| NR   | 1.83  | 1.83  |  |
+
+  : SFC HSD/1000GTKM - Goods
+  
+
+### Punctuality loss casses - running account
+
+  : Punctuality loss cases - running account
+
+| Shed    | DLI | UMB  | FZR | MB | LKO | Total |
+|-------|-----|------|-----|----|-----|-------|
+|Apr 17   |0    |0     |0    |2   |4    |6      |
+|May 17   |0    |0     |1    |1   |11   |13     |
+|Jun 17   |41   |1     |5    |2   |8    |57     |
+|July 17  |1    |0     |0    |0   |9    |10     |
+|Aug 17   |4    |0     |0    |1   |7    |12     |
+|Sept 17  |3    |2     |0    |1   |7    |13     |
+|Apr-Sept'17 |  49 |3     |6    |7   |46   |111    |
+
+
+  
+  
+  
+# CB shop related Issues
+
+## Over due sch
+POH-TKD-1, LDH-01
+IOH-TKD-01,LKO-04
+
+## Weak areas-Based on setouts (Apr.-Sept.) 
+
+<!---
+You can change colors also within a frame.
+\setbeamercolor{block title}{use=structure,fg=white,bg=purple!75!black}
+\setbeamercolor{block body}{use=structure,fg=black,bg=white!20!white}
+--->
+
+\setbeamercolor{block title}{use=structure,fg=white,bg=purple!75!black}
+\setbeamercolor{block body}{use=structure,fg=black,bg=white!20!blue}
+
+### Mechanical-45 (54.8%)
+
+ - Power Pack-12
+ - Air brake system -08
+ - Cooling water System-07
+ - Fuel oil system-06
+
+
+
+### Electrical-37(45.2%)
+
+ -Elect. M/Cs-10
+ -Power & CNL cables-06
+ - Relays/contractors/
+ - Ckt breakers/switches-08
+
+> - Eat eggs
+> - Drink coffee
+
+
+
+# Issues related to crews needs Training / counseling 
+
+Coupling  issues (opening/stucking up etc) - H type coupler
+CCB issues (self test/Proper positioning of L&T switch/PCS knock down etc) 
+Shunter/Loco pilot failed to follow proper procedure to shut down loco
+
+### Cab changing issues
+
+\setbeamercolor{block title}{use=structure,fg=white,bg=red!75!black}
+\setbeamercolor{block body}{use=structure,fg=black,bg=blue!20!white}
+
+Applied higher notch at lower speed
+
+Details of  problems faced during working pertains to loco Troubles is not being recorded in ME-175
+
+
+## Current Focus areas for Sheds
+
+## Action to be taken 
+  - Prompt & in-depth investigation of Each failure
+  - Implementation of Action Plan for  improving reliability
+  - Implementation of winter drive
+  - Incoming emanation & analysis of fault data through MBCS and REMMLOT
+  - Superchecking of outgoing locos
+  - ABC classification of locomotives based on 
+    + SFC and  
+    + rectification planning  and 
+    + implementation
+  - Timely scheduling (Major/Medium) of locos
+  - Developing locos  based DRIP FREE locos concepts 
+
+
+
+# Locomotives  holdings of Sheds
+
+\setbeamercolor{block title}{use=structure,fg=white,bg=purple!75!black}
+\setbeamercolor{block body}{use=structure,fg=black,bg=blue!20!white}
+
+
+### Third level heading
+
+#### The foruth level heading
+
+# loco holding heading
+
+| Loco Shed | Holding  | Passenger Links | Goods Outage |
+|-----------|----------|-----------------|--------------|
+| TKD       | 166      | 129             | 14           |
+| LDH       | 166      | 129             | 14           |
+| AMV       | 166      | 129             | 14           |
+| SSB       | 166      | 129             | 14           |
+|----------------------------------------------------
+| Total     | 166      | 129             | 14           |
+
+
+
+
+## Performance  2015-16 vs 2016-17
+
+
+### Comparative  Performance apr-Aug  - 2016 vs 2017
+
+
+
+# Action taken for Reliability and safety
+
+  -	Formulation & Monitoring of Action plan targets for Diesel sheds issued by CEE for 2017-18
+  - Planning of Major & Medium schedules for 2017-18 & Compliance of Major & Medium schedules
+  - Timely implementation of various Drives  such as 
+      + Summer Drives, 
+      + Fire prevention Drive, 
+      + Safety Drives & 
+      + Engine shut down 
+      + prevention check Drive.
+  - Award of AMCs on OEM of MBCS,MCBG & TCCs and other subassemblies
+
+# Good Works Done in recent past
+
+  - Cleanliness drive conducted in all sheds and regularly being organised
+  - NR Diesel Wing has finalized the condemnation of 71 overage & 24 premature obsolete   and  Accidental locos during 2016-17. 21 locos are further under process of condemnation.
+
+  - All ALCO and HHP locos at NR based sheds have been completed for the modification of provision of additional BP cut out cocks with vent. Provision of additional BP cut out cocks with vent will discharge the air much faster (BP destruction). This modification was done as per RDSO letter no. SD.DFM.A.4.7 dated:26.03.15.
+
+# auto page brake ? how
+
+  -	All four diesel sheds of NR (TKD, AMV, SSB and LDH) are IMS certified diesel sheds
+  - WDG4 Locomotives maintenance has been started at LDH shed w.e.f. 01.12.16. Currently 13 WDG4 locomotives are based at LDH Diesel Loco shed.  With this facility creation, HHP loco maintenance facility is available at all the three major sheds of NR viz TKD, AMV and LDH. This will add flexibility to train operations and will help in liquidating the overdue schedules of HHP locomotives at shortest possible ineffective over NR by minimising Dead Loco movements of HHP locos.  
+
+# some more {data-background=#ff00ff} 
+
+any bg colour ??
+<!--- bg not in beamer? --->
+  - Provision of CCTV in DTC exam hall at Diesel shed AMV in terms of directions of Railway board and CCTV in Stores Depot have also been provided for security and vigil.
+???	A Motorised Truck Assembly has been prepared for WDM3A locos in Diesel shed TKD as a unit exchange item for improving reliability and performance of the asset. 
+  - Skill development Programme - In an effort of upgrading skill and knowledge dissemination to shed staff, practical training sessions by expert supervisors have been started in all sheds. For adopting good practice of other Railways??? sheds visits of staff done.
+  - Steps taken for human resources development
+  - Grievance Cells are functioning in all sheds
+  - Promotions for technicians staff finalised at TKD last year. This was pending since last many years.
+  - Indents for filling up of vacancies sent to RRBs.
+  - A cell for retired staff has been started at TKD shed to resolve their problems and assist in getting Railway passes etc.
+  - RO water is available in all sheds for drinking to all shed staff.
+  - Inputs in canteens has been given to improve infrastructure and quality of food.
+  - Parks has been developed and being maintained for maintaining  good environment.  
+  
+  
+# CSS color background {data-background=#ff0000}
+
+CSS color background {data-background=#ff0000}
+
+# Full size image background {data-background="\Users\lenovo\Desktop\CMPE\swatch.jpg"}
+
+## Full size image background {data-background="newmap3.png"}
+
+ Video background {data-background-video="background.mp4"}
+
+# Embed a web page as a background {data-background-iframe="https://www.google.com"}  
+
+
+Indian Railways signed an agreement with GE on 30 November 2015 for manufacture , supply and maintenance of the world class fuel efficient, environment friendly and reliable Diesel Locomotives. The agreement includes supply of 700 locos of 4500 HP and 300 locos of 6000 HP. 
+It is a PPP project where a compnay GEDLPL has been set up with the 26% equity participtioin of Indian Railways and remaining equity with GE. The total value of  the investment in the company is about Rupees 13000 crores.
+The project would 
+Meeting with the strict timelines, the compney handed over the first 2 locomotives to Indina Railways on 22 February meeting with the project timelines. These first two locomoitves shall be subjected to various tests and trials. 
+Soon thereafter, the compnay would supply about 8 locomiitves per month. 
+The first 250 of these locomotives shall be based in the compnay mantenance depot where 
+
+
+# Advantage of the project
+
+
+# The leadin project timelines
+
+## Contract Agreement date 30 Nov 2015
+
+## First contractual delivery of locos 22 Feb 2018
+
+## Deal Size: ~$2.6B :  
+
+## 1st of its type PPP ... Joint Venture with 26% IR share ~ Rs. 1300 Cr. plus investment
+
+## Equipment & Services including Locomotive production facility  2 Service facilities
+
+## 1000 Locos over 10 yrs   700 of 4500hp + 300 of 6000hp
+
+## Basic cost : 15,93,60,200  per loco ( Plus taxes, 10% extra for initial imported supply)
+
+# Timelines
+
+-Roza Company Maintenance Shed	        : Ready in Feb 2018
+-Loco Handover                  		: Feb 2018
+-Start Of India Operations             	: Aug 2018
+-Shipment to IR from Marhowra  	        : Oct 2018  
+
+**The first 250 loco shall be maintained by Company at Roza for 9 years.**
+
+__The Next 251- 500 to be maintained by Railway Depot under GE supervision in GandhiDham, WR for 4 years.__
+
+# Infrastructure
+
+-Marhowrah, Bihar  : Factory + Township : 70 Acres (Total Area  200 Acres)
+-Roza, UP                 : Maintenance Shed + Training Centre : 20+ Acres
+-Gandhidham, GJ : Maintenance Shed 20 + Acres 
+
+# Supply commitment
+
+
+# Accounting Year	Number of Locomotives to be supplied
+
+Year of supply	| Locomotive 4500	  | Locomotive 6000
+-- | ----------------- | --------------- 	
+| First Year of Supply	 |2 |0	
+| Second Year of Supply 	| 96 |	2 
+| Third Year of Supply 	 | 85	| 15 
+|  Fourth Year of Supply |	80	| 20
+| Fifth Year of Supply  |	75 |	25
+| Sixth Year of Supply 	| 70 |	30
+|  Seventh Year of Supply |	60	 |40
+| Eighth Year of Supply 	| 60	| 40
+|  Ninth Year of Supply 	| 60	| 40
+| Tenth Year of Supply 	  | 57	| 43
+| Eleventh Year of Supply |	55 |	45
+
+
+Total	700 of 4500 HP and 	300 of 6000 HP locos
+
+
+\setbeamercolor{block title}{use=structure,fg=black,bg=purple!55!black}
+\setbeamercolor{block body}{use=structure,fg=white,bg=blue!20!white}
+
+
+# WDG4G Loco Architecture (ES43ACmi)
+
+## Platform / Underframe
+ - I Beam underframe
+ - 6000 L Fuel tank
+ - 400 tonnes buff load
+ - AAR Type E Coupler
+ - EN15551 certified buffers
+
+## Bogie
+ - Fabricated Bogie frame designed to meet EN13749
+ - TM Combo Assembly  GEB24 TMs
+ - TBUs
+ - Coil Primary & Rubber Secondary suspension
+
+## Operator Cabs
+ - Dual Cab
+ - HVAC Equipped
+ - 4 Display Screens / Cab
+ - Hot plate / Tool box
+ - LED headlights, Marker lights
+ - EN12663 Collision protection
+ - AAR S580 Anti-climber
+
+## Aux Cab
+ - IGBT technology inverters
+ - Axle control
+ - Full self load 
+ ??? DB Grid
+ - Unitized packaging of electrical components
+ - Control C
+
+## Engine Cab
+ - GEVO-12 CylEngine
+ - EUI Injection
+ - Best of class fuel efficiency
+ - UIC 1 Emissions compliant
+
+## Blower / Alternator Cab
+ - GMG210 Alternator
+ - Alternator start
+
+## Radiator Cab
+ - 72 inch Cooling fan 
+ - Cycle skipper cooling control
+ - Air to Water and Air to Air Cooling
+ - Plate type Lube Oil Cooler
+ - Wabtec Fastbrake Air brake system
+ - APU for HVAC, lighting & battery charging
+ - Rotary Screw Compressor
+
+ - Toilet / Urinal
+ - RLA Cab 
+ - DB Grid 
+ ??? Full self load
+
+## Additional Features: 
+
+ - Additional display screen on helper side
+ - Overhead console & placements of switches
+ - LED type Headlights
+ - Heated Windshields
+ - Windshield Washers
+ - Hot plate
+ - Tool box locker & shelves on consoles
+ - Insulated side windows pane for thermal and noise insulation. 
+ - Hand grabs and foot steps for windshield washing 
+ - Electrical Switch operated pneumatic parking brake instead of chain/lever type
+ - Integrated screens + Air Brake setup screen
+
+# Improvements: 
+
+ - Spacious Cab and Doors entry and exit (especially # 2 cab).
+ - More powerful HVAC (2.25 TR vs 1.75 TR) 
+ - Flasher & Marker lights Design 
+ - Bigger windshields(vertically)
+ - Screens size : 15??? vs 12???
+ - Concealed Tubes and Conduits inside the cab (For HVAC, Brake Valve , Wiper etc)
+ - Better on outside aesthetic appeal & finish
+ - Internal cab noise limited to 85 dB(A), higher for IR WDG4D loco # 2 end cab.
+
+# Comparable features:
+
+ - Consoles layout is similar, controls location on desk will be quite familiar to drivers.
+ - Switch layout/controls type / access similar to existing Dual cab loco
+ 
+ 
+
+#  Nominal Details
+
+## Leading data
+
+item | Provided
+---- | ---
+Horse Power(Gross)	| 4500 HP
+Horse Power(Traction) |	4261 HP
+Weight(Nominal)	| 132,000 Kg (291,010 lbs.)
+Maximum Speed(fully worn Wheels) |	100 Km/h
+axle load | 22t
+Wheel Arrangement |	Co-Co
+Maximum Starting Tractive Effort |	544 KN
+Maximum tractive effort | 54.59t
+Maximum continuous Tractive Effort |	405 KN
+Gear Ratio |	85:18
+Maximum braking effort  | 27,09t
+
+
+## Dimentions
+
+item | Provided
+---- | ---
+Major Dimensions	| 
+Length (Over couplers) |	22567 mm
+Height |	4227 mm
+Width	| 3200 mm
+Minimum Track Curvature	| SU	174 m (570 ft.) radius
+Coupled Pair |	174 m (570 ft.) radius
+Driving Wheel Diameter(new)	| 1092 mm
+Minimum Wheel Diameter |	1016 mm
+Maximum CG height from rail level : | not exceeding 1830mm
+
+\colorlet{shadecolor}{red!90} 
+
+\begin{shaded}
+
+Black text with a darker red background.
+
+\end{shaded}
+
+## Consumables
+
+item | Provided
+---- | ---
+Fuel Tank(usable) | 6000 L
+Coolant	| 1249 L
+Lubricating Oil |	1030 L
+Sand	| 4 sand boxes of 85 L each
+Maintenance periodicity | 90 days
