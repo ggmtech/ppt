@@ -1,0 +1,219 @@
+---
+title: "Hybrid Manufacturing Technology Glimpses"
+subtitle: "Addative Manufacturing assisted"
+author: "Gopal Kumar, Principal Executive Director (Rolling Stock)"
+institute: "Research Designs and Standards Organisation (RDSO), Lucknow 226011"
+date: "2022-12-20 (system updated: `r Sys.Date()`)"
+# url: "https://rdso.indianrailways.gov.in/"
+output:
+  beamer_presentation:
+    theme: PaloAlto
+    colortheme: dolphin
+    fonttheme: structurebold
+    latex_engine: xelatex
+    toc: yes
+    slide_level: 2
+    keep_tex: yes
+  slidy_presentation: default
+  ioslides_presentation: default
+fontsize: 10pt
+mathspec: yes
+aspectratio: 43
+navigation: horizontal
+section-titles: yes
+titlegraphic: dahlia.png
+header-includes:
+- \logo{ \includegraphics[width=1cm]{IRlogored.png} }
+- \usepackage{amsmath,amssymb}
+- \usepackage{fancyvrb}
+- \usepackage{tikz}
+- \usetikzlibrary{shapes}
+- \usetikzlibrary{spy,calc}
+- \usetikzlibrary{decorations, decorations.text}
+- \usebackgroundtemplate{\tikz\node[opacity=0.1]{\includegraphics[height=\paperheight,width=\paperwidth]{dahlia.png}};}
+- \setbeamertemplate{background}{\tikz[overlay,remember picture]\node[opacity=0.4]at
+  (current page.center){\includegraphics[width=2cm]{owl.png}};}
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Addative Manufacturing
+
+**ISO/ASTM 52900:2021 Additive manufacturing--- General principles**
+
+EN ISO/ASTM 52900:2022-03 Additive manufacturing 
+
+Image credit: [Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+
+# Introduction ()
+
+## Additive manufacturing (AM) - (*ISO/ASTM 52900:2021 definations*)
+
+**Additive manufacturing (AM)** is the general term for those
+technologies that successively join material to create physical objects
+as specified by 3D model data.
+
+### Presently used for
+
+-   various applications in engineering industry
+-   as well as other areas of society, such as medicine, education,
+    architecture, cartography,
+-   toys and entertainment.
+
+### Principal
+\small
+-   Applies the additive shaping principle and thereby builds physical
+    three-dimensional (3D) geometries by successive addition of
+    material.
+
+-   Additive manufacturing(AM) process of joining materials to make
+    parts from 3D model data, usually layer upon layer, as opposed to
+    subtractive manufacturing and formative manufacturing methodologies
+
+-   Historical terms include: additive fabrication, additive processes,
+    additive techniques, additive layer manufacturing, layer
+    manufacturing, solid freeform fabrication and freeform fabrication.
+
+-   Rapid prototyping
+
+---
+
+# Process categories
+
+*ISO categrorise into 7 types*
+
+1.  **Binder jetting (BJT)** process in which a liquid bonding agent is
+    selectively deposited to join powder materials
+
+2.  **Directed energy deposition (DED)** process in which focused
+    thermal energy is used to fuse materials by melting as they are
+    being deposited "Focused thermal energy" means that an energy source
+    (for example laser, electron beam or plasma arc) is focused to melt
+    the materials being deposited.
+
+3\. **Material extrusion(MEX**) process in which material is selectively
+dispensed through a nozzle or orifice
+
+4.  **Material Jetting (MJT)** process in which droplets of feedstock
+    material are selectively deposited
+
+Example feedstock materials for material jetting include photopolymer
+resin and wax.
+
+5.  **Powder Bed Fusion (PBF)** process in which thermal energy
+    selectively fuses regions of a powder bed
+
+6.  **Sheet Lamination (SHL)** process in which sheets of material are
+    bonded to form a part
+
+7.  **Vat PhotoPolymerization (VPP)** process in which liquid
+    photopolymer in a vat is selectively cured by light-activated
+    polymerization
+
+
+
+# Introduction History
+
+## Key supporing technologies  
+<!-- Ref Gibson -->>
+- 3D graphics and CAD/CAE technology developed 
+- Improvement in computing power and PC doing real time tasks
+- Reduction in mass storage cost
+- Machine control equipment similar to CNC, photocopier, laser printer
+- Networking, sensors for actuators and positioning
+
+- Slice data standard format STL by 3D Systems[^1]
+
+[^1]: 3D Systems, USA (Charles Hull) is the First company filed patent and successfully commercialised AM
+
+## Associated technolgies
+
+- Lasers focussed controllable power, heating & curing
+- Printing technologies - Printer head droplet temperture and pressure
+- Programmable Logic Controllers used as machine building blocks
+- Materials for AM, from photo-curable materials
+
+- CNC Machining 
+
+- Use of Layers
+
+# Classification of AM process
+
+## 2 D classificaiton
+
+-image from Gibson
+
+## ISO classificaion -7 Types
+
+
+
+<!-- Direct LaTex code for IR red logo -->
+
+```{=tex}
+\centering
+\resizebox{0.95\textheight}{!}{%
+\begin{tikzpicture} %[scale=0.2]
+
+\node[anchor=north east,xshift=0.8pt,yshift=2pt, opacity=0.3] at (current page.north east) {\includegraphics[width=0.2\paperwidth]{IRlogored.png}};
+
+\draw[line width=2 mm] circle[radius=7.4 cm];    % outer circle
+\draw[ultra thick] circle[radius=6 cm] circle[radius=7 cm];
+        
+\path[%rotate=-15.2,
+postaction={decoration={ text along path, text format delimiters={|}{|},
+      text={    |\Huge| WELCOME DG and Spl.DG(VD)
+                %{ \pgfornament[scale=.4, ydelta=-9 pt]{15} }
+                },  text align=center, reverse path },  decorate  }
+        ] (-27:6.2cm) arc (-27:210:6.2cm);   
+        \path [postaction={decorate,decoration={text along path, text align=fit to path,text={|\Huge| AND ALL OFFICERS }}}] (209:6.8cm) arc (209:330:6.8cm);
+        
+\node[] at (0,0.0){\includegraphics[height=11.8cm,width=11.8cm]{IRlogored.png}};
+\end{tikzpicture}
+}
+```
+
+# torn paper text
+
+
+You can embed [links with names](https://quarto.org/),direct urls like
+<https://quarto.org/>, and links [otherplaces](#inline-text-formatting)document.
+inline image: ![render icon](flowery.png).
+circle is $A = \pi r^2$,where $r$ is the radius and $\pi$
+is the constant $3.141592\ldots$.
+
+$$ 
+f(x)={\sqrt{\frac{\tau}{2\pi}}}
+      e^{-\tau (x-\mu )^{2}/2}
+$$
+
+Images on their own line ![Elephant](owl.png) or do they?
+
+Images on their own line become a block:
+
+![Elephant](flowery.png)
+
+
+# Comparison of two technologies 
+<!-- for non latex
+::: {.columns align="center" totalwidth="8em"}
+**Additive Manufacturing**
+
+- Complexity for free
+- Free Form printing
+
+::: {.column width="40%"}
+- Econmical for large models
+:::
+
+::: {.column width="60%" align="bottom"}
+contents...
+:::
+
+**Subtractive Manufacturing**
+
+Advantage
+
+:::
+--->
